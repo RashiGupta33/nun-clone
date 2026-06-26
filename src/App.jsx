@@ -3,6 +3,9 @@ import Hero from "./components/Hero";
 import HeroBackground from "./components/HeroBackground";
 import DashboardPreview from "./components/DashboardPreview";
 import HowItWorks from "./components/HowItWorks";
+import EverythingInOnePlace from "./components/EverythingInOnePlace";
+import CTA from "./components/CTA";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -13,6 +16,9 @@ function App() {
       <Hero />
       <DashboardPreview />
       <HowItWorks />
+      <EverythingInOnePlace />
+      <CTA />
+      <Footer />
     </div>
   );
 }
