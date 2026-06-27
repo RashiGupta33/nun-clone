@@ -32,28 +32,33 @@ export default function Hero() {
     }, [text, isDeleting, wordIndex]);
 
     return (
-        <section className="relative pt-32 pb-20 md:pt-40">
+        <section className="pt-13 pb-20 md:pt-25">
             <div className="max-w-7xl mx-auto px-6">
 
                 <div className="text-center flex flex-col items-center w-full overflow-hidden">
 
-                    <h1 className="font-[900] tracking-[-0.04em] text-white text-[36px] sm:text-[44px] md:text-[64px] lg:text-[84px] leading-[1.1]">
-                        <span className="whitespace-nowrap">
-                            Solve your{" "}
-                            <span className="inline-block min-w-[200px] sm:min-w-[240px] md:min-w-[350px] lg:min-w-[470px] text-left">
-                                {text}<span className="animate-[pulse_1s_cubic-bezier(0.4,0,0.6,1)_infinite] font-light text-gray-300">|</span>
+                    <h1 className="font-[800] tracking-[-0.04em] text-white text-[20px] sm:text-[24px] md:text-[28px] lg:text-[70px] leading-[1.2]">
+                        <span className="whitespace-nowrap flex justify-center">
+                            <span>Solve your&nbsp;</span>
+
+                            <span className="w-[180px] sm:w-[220px] md:w-[250px] lg:w-[620px] text-left">
+                                {text}
+                                <span className="animate-[pulse_1s_cubic-bezier(0.4,0,0.6,1)_infinite] font-light text-gray-300">
+                                    |
+                                </span>
                             </span>
                         </span>
-                        <br />
-                        with{" "}
-                        <span className="relative inline-block z-10">
-                            AI agents.
-                            {/* underline */}
-                            <span className="absolute left-0 bottom-[-8px] -z-10 h-3 md:h-4 w-[102%] bg-[#e55cd8]/50"></span>
+
+                        <span className="block -mt-2 lg:-mt-4">
+                            with{" "}
+                            <span className="relative inline-block z-10">
+                                AI agents.
+                                <span className="absolute left-0 bottom-[-8px] -z-10 h-3 md:h-4 w-[102%] bg-[#e55cd8]/50" />
+                            </span>
                         </span>
                     </h1>
 
-                    <p className="mx-auto mt-2 max-w-5xl text-[18px] sm:text-[20px] md:text-[24px] leading-[1.5] text-gray-400 font-medium px-4">
+                    <p className="mx-auto mt-9 max-w-5xl text-[18px] sm:text-[20px] md:text-[24px] leading-[1.5] text-gray-400 font-medium px-4">
                         Save countless hours of manual work by using AI agents performing end-to-end tasks at <br /> scale.
                     </p>
 
