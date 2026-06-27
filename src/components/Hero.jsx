@@ -33,11 +33,11 @@ export default function Hero() {
 
     return (
         <section className="pt-13 pb-20 md:pt-25">
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-8xl mx-auto px-5">
 
                 <div className="text-center flex flex-col items-center w-full overflow-hidden">
 
-                    <h1 className="font-[800] tracking-[-0.04em] text-white text-[20px] sm:text-[24px] md:text-[28px] lg:text-[70px] leading-[1.2]">
+                    <h1 className="font-[700] tracking-[-0em] text-white text-[20px] sm:text-[24px] md:text-[28px] lg:text-[65px] leading-[1.3">
                         <span className="whitespace-nowrap flex justify-center">
                             <span>Solve your&nbsp;</span>
 
@@ -58,7 +58,7 @@ export default function Hero() {
                         </span>
                     </h1>
 
-                    <p className="mx-auto mt-9 max-w-5xl text-[18px] sm:text-[20px] md:text-[24px] leading-[1.5] text-gray-400 font-medium px-4">
+                    <p className="mx-auto mt-10 max-w-6xl text-[18px] sm:text-[20px] md:text-[24px] leading-[1.5] text-gray-400 font-medium px-4">
                         Save countless hours of manual work by using AI agents performing end-to-end tasks at <br /> scale.
                     </p>
 

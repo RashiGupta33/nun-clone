@@ -3,14 +3,14 @@ import { ChevronDown, ChevronRight } from "lucide-react";
 export default function Navbar() {
     return (
         <header className="fixed top-0 left-0 w-full z-50 bg-transparent">
-            <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
-                <div className="h-24 flex items-center justify-between">
+            <div className="max-w-[1400px] mx-auto px-8 lg:px-32">
+                <div className="h-20 flex items-center justify-between">
                     {/* Logo */}
 
                     <a href="/" className="flex items-center">
                         <svg
                             viewBox="0 0 589.02 111.49"
-                            className="h-10 w-auto"
+                            className="h-6.5 w-auto"
                         >
                             <path
                                 fill="none"
@@ -74,7 +74,7 @@ export default function Navbar() {
 
                     {/* Navigation */}
 
-                    <nav className="hidden lg:flex items-center gap-8 text-sm font-bold text-white/90">
+                    <nav className="hidden lg:flex items-center gap-10 text-sm tracking-[-0.02em] font-semibold text-white/90 mr-15">
                         <a
                             href="/"
                             className="text-[#e55cd8] hover:text-[#e55cd8]/80 transition flex items-center gap-1.5"
@@ -102,28 +102,28 @@ export default function Navbar() {
 
                     {/* Right */}
 
-                    <div className="hidden lg:flex items-center gap-6">
+                    <div className="hidden lg:flex items-center gap-8 ml-1">
                         <a
-                            href="/nexus/login"
-                            className="text-white text-sm font-bold hover:text-gray-300 transition"
+                            href="/"
+                            className="text-white text-sm font-semibold hover:text-gray-300 transition"
                         >
                             sign in
                         </a>
 
                         <a
-                            href="/nexus/signup"
+                            href="/"
                             className="flex items-center gap-1 rounded-full
               bg-[#e55cd8]
-              px-6
-              py-2.5
+              px-5
+              py-2
               text-sm
-              font-bold
+              font-semibold
               text-black
               hover:opacity-90
               transition"
                         >
                             get started
-                            <ChevronRight size={16} />
+                            <ChevronRight size={18} />
                         </a>
                     </div>
                 </div>
