@@ -1,39 +1,60 @@
+import { useState, useEffect } from "react";
 import { ArrowRight, Calendar } from "lucide-react";
 
+const WORDS = [
+    "game testing",
+    "app QA",
+    "market research",
+    "compliance checks"
+];
+
 export default function Hero() {
+    const [wordIndex, setWordIndex] = useState(0);
+    const [text, setText] = useState("");
+    const [isDeleting, setIsDeleting] = useState(false);
+
+    useEffect(() => {
+        const currentWord = WORDS[wordIndex];
+        const typeSpeed = isDeleting ? 40 : 100;
+
+        const timeout = setTimeout(() => {
+            if (!isDeleting && text === currentWord) {
+                setTimeout(() => setIsDeleting(true), 2500);
+            } else if (isDeleting && text === "") {
+                setIsDeleting(false);
+                setWordIndex((prev) => (prev + 1) % WORDS.length);
+            } else {
+                setText(currentWord.substring(0, text.length + (isDeleting ? -1 : 1)));
+            }
+        }, typeSpeed);
+
+        return () => clearTimeout(timeout);
+    }, [text, isDeleting, wordIndex]);
+
     return (
-        <section className="relative pt-44 pb-20">
+        <section className="relative pt-32 pb-20 md:pt-40">
             <div className="max-w-7xl mx-auto px-6">
 
-                {/* Heading */}
+                <div className="text-center flex flex-col items-center w-full overflow-hidden">
 
-                <div className="text-center">
-
-                    <h1 className="font-black leading-[0.95] tracking-[-3px] text-white text-[72px] lg:text-[108px]">
-                        Solve your
-                        <br />
-
-                        <span className="relative inline-block">
-                            market research
-
-                            {/* underline */}
-
-                            <span className="absolute left-0 bottom-2 h-4 w-full bg-[#cf4dc7]"></span>
+                    <h1 className="font-[900] tracking-[-0.04em] text-white text-[36px] sm:text-[44px] md:text-[64px] lg:text-[84px] leading-[1.1]">
+                        <span className="whitespace-nowrap">
+                            Solve your{" "}
+                            <span className="inline-block min-w-[200px] sm:min-w-[240px] md:min-w-[350px] lg:min-w-[470px] text-left">
+                                {text}<span className="animate-[pulse_1s_cubic-bezier(0.4,0,0.6,1)_infinite] font-light text-gray-300">|</span>
+                            </span>
                         </span>
-
                         <br />
-
                         with{" "}
-
-                        <span className="relative z-10">
-                            AI agents
+                        <span className="relative inline-block z-10">
+                            AI agents.
+                            {/* underline */}
+                            <span className="absolute left-0 bottom-[-8px] -z-10 h-3 md:h-4 w-[102%] bg-[#e55cd8]/50"></span>
                         </span>
-                        .
                     </h1>
 
-                    <p className="mx-auto mt-10 max-w-5xl text-[28px] leading-[1.5] text-[#8d8ca5]">
-                        Save countless hours of manual work by using AI agents
-                        performing end-to-end tasks at scale.
+                    <p className="mx-auto mt-2 max-w-5xl text-[18px] sm:text-[20px] md:text-[24px] leading-[1.5] text-gray-400 font-medium px-4">
+                        Save countless hours of manual work by using AI agents performing end-to-end tasks at <br /> scale.
                     </p>
 
                 </div>
@@ -47,21 +68,21 @@ export default function Hero() {
                         className="
             flex
             items-center
-            gap-3
+            gap-2
             rounded-full
             bg-gradient-to-r
-            from-[#9F5CFF]
-            to-[#F15BCF]
-            px-10
-            py-5
-            text-xl
-            font-semibold
+            from-[#b366ff]
+            to-[#f056d6]
+            px-8
+            py-4
+            text-lg
+            font-bold
             text-white
             transition
-            hover:scale-105"
+            hover:opacity-90"
                     >
                         get started
-                        <ArrowRight size={22} />
+                        <ArrowRight size={20} />
                     </a>
 
                     <button
@@ -71,16 +92,16 @@ export default function Hero() {
             gap-3
             rounded-full
             border
-            border-white/30
-            px-10
-            py-5
-            text-xl
-            font-semibold
+            border-white/20
+            px-8
+            py-4
+            text-lg
+            font-bold
             text-white
             transition
-            hover:bg-white/10"
+            hover:bg-white/5"
                     >
-                        <Calendar size={22} />
+                        <Calendar size={20} />
                         talk to us
                     </button>
 

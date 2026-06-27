@@ -74,29 +74,29 @@ export default function Navbar() {
 
                     {/* Navigation */}
 
-                    <nav className="hidden lg:flex items-center gap-10 text-white font-medium">
+                    <nav className="hidden lg:flex items-center gap-8 text-sm font-bold text-white/90">
                         <a
                             href="/"
-                            className="text-pink-400 hover:text-pink-300 transition"
+                            className="text-[#e55cd8] hover:text-[#e55cd8]/80 transition flex items-center gap-1.5"
                         >
-                            home
+                            <span className="text-xl leading-none">&bull;</span> home
                         </a>
 
-                        <a href="/case-studies" className="hover:text-pink-300 transition">
+                        <a href="/case-studies" className="hover:text-gray-300 transition">
                             case studies
                         </a>
 
-                        <a href="/pricing" className="hover:text-pink-300 transition">
+                        <a href="/pricing" className="hover:text-gray-300 transition">
                             pricing
                         </a>
 
-                        <a href="/enterprise" className="hover:text-pink-300 transition">
+                        <a href="/enterprise" className="hover:text-gray-300 transition">
                             enterprise
                         </a>
 
-                        <button className="flex items-center gap-1 hover:text-pink-300 transition">
+                        <button className="flex items-center gap-1 hover:text-gray-300 transition">
                             company
-                            <ChevronDown size={18} />
+                            <ChevronDown size={16} />
                         </button>
                     </nav>
 
@@ -105,26 +105,25 @@ export default function Navbar() {
                     <div className="hidden lg:flex items-center gap-6">
                         <a
                             href="/nexus/login"
-                            className="text-white font-medium hover:text-pink-300 transition"
+                            className="text-white text-sm font-bold hover:text-gray-300 transition"
                         >
                             sign in
                         </a>
 
                         <a
                             href="/nexus/signup"
-                            className="flex items-center gap-2 rounded-full
-              bg-gradient-to-r
-              from-[#a855f7]
-              to-[#ec4899]
-              px-8
-              py-3
-              font-semibold
-              text-white
+                            className="flex items-center gap-1 rounded-full
+              bg-[#e55cd8]
+              px-6
+              py-2.5
+              text-sm
+              font-bold
+              text-black
               hover:opacity-90
               transition"
                         >
                             get started
-                            <ChevronRight size={18} />
+                            <ChevronRight size={16} />
                         </a>
                     </div>
                 </div>
