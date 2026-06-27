@@ -1,29 +1,29 @@
-import { ArrowRight, Calendar } from "lucide-react";
+import { ChevronRight, Calendar } from "lucide-react";
 
 export default function CTA() {
     return (
-        <section className="relative overflow-hidden bg-[#16122F] py-36">
+        <section className="relative overflow-hidden bg-inherit py-36">
 
             {/* Background Glow */}
 
-            <div className="absolute left-1/2 top-0 -translate-x-1/2 h-[500px] w-[700px] rounded-full bg-gradient-to-r from-violet-600/20 to-pink-500/20 blur-[160px]" />
+            <div className="absolute left-1/2 top-0 -translate-x-1/2 h-[500px] w-[700px] rounded-full bg-gradient-to-r blur-[160px]" />
 
-            <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
 
-                <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
+                <h2 className="text-4xl md:text-4xl lg:text-5xl font-bold leading-tight text-white">
                     Start your AI automation journey{" "}
-                    <span className="bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent">
-                        today
+                    <span className="relative inline-block z-10">
+                        today.
+                        <span className="absolute left-0 bottom-[-7px] -z-10 h-3 md:h-3 w-[102%] bg-[#e55cd8]/50" />
                     </span>
-                    .
                 </h2>
 
-                <div className="mt-14 flex flex-col sm:flex-row justify-center gap-6">
+                <div className="mt-9 flex flex-col sm:flex-row justify-center gap-4">
 
                     {/* Get Started */}
 
                     <a
-                        href="/nexus/signup"
+                        href="/"
                         className="
               inline-flex
               items-center
@@ -33,8 +33,8 @@ export default function CTA() {
               bg-gradient-to-r
               from-[#8B5CF6]
               to-[#EC4899]
-              px-10
-              py-5
+              px-8
+              py-3
               text-lg
               font-semibold
               text-white
@@ -44,7 +44,7 @@ export default function CTA() {
             "
                     >
                         get started
-                        <ArrowRight size={22} />
+                        <ChevronRight size={25} />
                     </a>
 
                     {/* Talk to Us */}
@@ -57,13 +57,13 @@ export default function CTA() {
               gap-3
               rounded-full
               border
-              border-white/20
-              bg-white/5
-              px-10
-              py-5
+              border-white/80
+              bg-inherit/0
+              px-8
+              py-3
               text-lg
               font-semibold
-              text-white
+              text-white/90
               backdrop-blur-md
               transition-all
               duration-300

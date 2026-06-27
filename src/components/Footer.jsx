@@ -1,9 +1,3 @@
-// import {
-//     Linkedin,
-//     Twitter,
-//     Disc,
-// } from "lucide-react";
-
 export default function Footer() {
     return (
         <footer className="bg-[#0F0C1F] border-t border-white/10">
@@ -80,7 +74,7 @@ export default function Footer() {
 
                 {/* Divider */}
 
-                <div className="my-10 border-t border-white/10" />
+                <div className="-my-5 border-t border-white/10" />
 
                 {/* Bottom */}
 

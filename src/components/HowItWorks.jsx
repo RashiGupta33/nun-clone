@@ -1,5 +1,6 @@
 import { CheckCircle, AlertCircle } from "lucide-react";
 import Timeline from "./Timeline";
+import { motion } from "framer-motion";
 
 function Task({ title, status, bug }) {
     return (
@@ -57,7 +58,7 @@ function Task({ title, status, bug }) {
 
 export default function HowItWorks() {
     return (
-        <section className="relative bg-[#16122F] py-32 overflow-hidden">
+        <section className="relative bg-[#16122F] py-32  overflow-hidden -mt-10">
             <Timeline />
 
             <div className="max-w-7xl mx-auto px-6">
@@ -65,59 +66,185 @@ export default function HowItWorks() {
                 {/* Heading */}
 
                 <div className="text-center mb-24">
-                    <h2 className="text-5xl lg:text-6xl font-bold text-white">
+                    <h2 className="text-4xl lg:text-5xl font-bold text-white">
                         Here's how it works.
                     </h2>
 
-                    <p className="mt-6 text-xl text-gray-400">
+                    <p className="mt-2 text-20px text-gray-400">
                         Describe what you want to do — our AI will handle the rest.
                     </p>
                 </div>
 
                 {/* Step 1 */}
 
-                <div className="grid lg:grid-cols-[1fr_auto] gap-12 items-center">
+                <div className="grid lg:grid-cols-[1fr_1fr] gap-12 items-center">
+
+                    {/* Step Number */}
+                    <div className="hidden lg:flex justify-end">
+                        <span className="text-3xl font-mono text-white/50 relative top-10">
+                            1
+                        </span>
+                    </div>
+
+                    {/* Fake Terminal (Right) */}
+                    <div>
+                        <div className="space-y-3 font-mono text-sm max-w-lg">
+                            {[
+                                "Complete the tutorial and flag issues.",
+                                "Conduct a competitor analysis for this app.",
+                                "Give me feedback for this onboarding flow.",
+                                "Complete a purchase and confirm receipt.",
+                                "Create me a design document of this level."
+                            ].map((text, i) => (
+                                <motion.div
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.5, delay: i * 0.15 }}
+                                    viewport={{ once: true, margin: "-100px" }}
+                                    key={i}
+                                    className="rounded-xl border border-white/5 bg-[#130f26] px-5 py-4 text-gray-300 shadow-sm flex items-center"
+                                >
+                                    {text}<span className="text-pink-500 animate-pulse ml-1">|</span>
+                                </motion.div>
+                            ))}
+                        </div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.8 }}
+                            viewport={{ once: true }}
+                            className="mt-8"
+                        >
+                            <h3 className="text-3xl font-bold text-white">
+                                Write instructions in plain english.
+                            </h3>
+
+                            <p className="mt-3 text-lg text-gray-400">
+                                No coding or technical expertise required.
+                            </p>
+                        </motion.div>
+                    </div>
+
+                </div>
+
+                {/* Step 2 */}
+
+                <div className="-ml-40 mt-28 grid lg:grid-cols-[auto_1fr] gap-12 items-center">
+
+                    {/* Step Number */}
+
+                    <div className="hidden lg:flex justify-end">
+                        <span className="text-4xl font-mono text-gray-600">
+                            2
+                        </span>
+                    </div>
+
+                    {/* Content */}
+
+                    <div>
+
+                        {/* Video Card */}
+
+                        <div
+                            className="
+      overflow-hidden
+      rounded-xl
+      "
+                        >
+                            <video
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                className="w-xl block rounded-2xl"
+                            >
+                                <source
+                                    src="https://assets.nunu.ai/nunu-landing-gameplay-720.mp4"
+                                    type="video/mp4"
+                                />
+                            </video>
+                        </div>
+
+                        {/* Text */}
+
+                        <div className="mt-8">
+                            <h3 className="text-3xl font-bold text-white">
+                                Let our agents run your tasks.
+                            </h3>
+
+                            <p className="mt-3 text-lg leading-8 text-gray-400 max-w-xl">
+                                Our AI agents interact with the device just like a human would.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                {/* ===================== STEP 3 ===================== */}
+
+                <div className="mt-28 ml-160 grid lg:grid-cols-[1fr_auto] gap-12 items-center">
 
                     {/* Left */}
 
                     <div>
 
-                        {/* Fake Terminal */}
+                        {/* Results Card */}
 
-                        <div className="rounded-2xl border border-white/10 bg-[#1D173B] p-8">
+                        <div
+                            className="
+      rounded
+      border
+      border-white/10
+      bg-[#1D173B]
+      p-8
+      shadow-[0_20px_60px_rgba(0,0,0,.35)]
+      "
+                        >
 
-                            <div className="space-y-4 font-mono text-base">
+                            <div className="space-y-3">
 
-                                <div className="text-pink-400">
-                                    Complete the tutorial and flag issues<span className="animate-pulse">|</span>
-                                </div>
+                                <Task
+                                    title="Complete the tutorial and flag issues."
+                                    status="completed"
+                                />
 
-                                <div className="text-pink-400">
-                                    Conduct a competitor analysis<span className="animate-pulse">|</span>
-                                </div>
+                                <Task
+                                    title="Conduct a competitor analysis for this app."
+                                    status="completed"
+                                />
 
-                                <div className="text-pink-400">
-                                    Give me feedback for this onboarding flow<span className="animate-pulse">|</span>
-                                </div>
+                                <Task
+                                    title="Give me feedback for this onboarding flow."
+                                    status="incomplete"
+                                    bug
+                                />
 
-                                <div className="text-pink-400">
-                                    Complete a purchase<span className="animate-pulse">|</span>
-                                </div>
+                                <Task
+                                    title="Complete a purchase and confirm receipt."
+                                    status="completed"
+                                />
 
-                                <div className="text-pink-400">
-                                    Create me a design document<span className="animate-pulse">|</span>
-                                </div>
+                                <Task
+                                    title="Draft me a design document of this level."
+                                    status="completed"
+                                />
 
                             </div>
+
                         </div>
+
+                        {/* Text */}
 
                         <div className="mt-8">
                             <h3 className="text-3xl font-bold text-white">
-                                Write instructions in plain English.
+                                Get your results.
                             </h3>
 
-                            <p className="mt-3 text-lg text-gray-400">
-                                No coding or technical expertise required.
+                            <p className="mt-3 max-w-xl text-lg leading-8 text-gray-400">
+                                Monitor outcomes in real time through powerful dashboards
+                                with detailed reports and insights.
                             </p>
                         </div>
 
@@ -125,146 +252,10 @@ export default function HowItWorks() {
 
                     {/* Step Number */}
 
-                    <div className="hidden lg:flex items-start">
-                        <span className="text-4xl font-mono text-pink-400">
-                            1
+                    <div className="hidden lg:flex">
+                        <span className="font-mono text-4xl text-gray-600">
+                            3
                         </span>
-                    </div>
-
-                    {/* Step 2 */}
-
-                    <div className="mt-28 grid lg:grid-cols-[auto_1fr] gap-12 items-center">
-
-                        {/* Step Number */}
-
-                        <div className="hidden lg:flex justify-end">
-                            <span className="text-4xl font-mono text-gray-600">
-                                2
-                            </span>
-                        </div>
-
-                        {/* Content */}
-
-                        <div>
-
-                            {/* Video Card */}
-
-                            <div
-                                className="
-      overflow-hidden
-      rounded-2xl
-      border
-      border-white/10
-      bg-[#1D173B]
-      shadow-[0_0_40px_rgba(0,0,0,.25)]
-      "
-                            >
-                                <video
-                                    autoPlay
-                                    muted
-                                    loop
-                                    playsInline
-                                    className="w-full block rounded-2xl"
-                                >
-                                    <source
-                                        src="https://assets.nunu.ai/nunu-landing-gameplay-720.mp4"
-                                        type="video/mp4"
-                                    />
-                                </video>
-                            </div>
-
-                            {/* Text */}
-
-                            <div className="mt-8">
-                                <h3 className="text-3xl font-bold text-white">
-                                    Let our agents run your tasks.
-                                </h3>
-
-                                <p className="mt-3 text-lg leading-8 text-gray-400 max-w-xl">
-                                    Our AI agents interact with the device just like a human would.
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    {/* ===================== STEP 3 ===================== */}
-
-                    <div className="mt-28 grid lg:grid-cols-[1fr_auto] gap-12 items-center">
-
-                        {/* Left */}
-
-                        <div>
-
-                            {/* Results Card */}
-
-                            <div
-                                className="
-      rounded-2xl
-      border
-      border-white/10
-      bg-[#1D173B]
-      p-8
-      shadow-[0_20px_60px_rgba(0,0,0,.35)]
-      "
-                            >
-
-                                <div className="space-y-5">
-
-                                    <Task
-                                        title="Complete the tutorial and flag issues."
-                                        status="completed"
-                                    />
-
-                                    <Task
-                                        title="Conduct a competitor analysis for this app."
-                                        status="completed"
-                                    />
-
-                                    <Task
-                                        title="Give me feedback for this onboarding flow."
-                                        status="incomplete"
-                                        bug
-                                    />
-
-                                    <Task
-                                        title="Complete a purchase and confirm receipt."
-                                        status="completed"
-                                    />
-
-                                    <Task
-                                        title="Draft me a design document of this level."
-                                        status="completed"
-                                    />
-
-                                </div>
-
-                            </div>
-
-                            {/* Text */}
-
-                            <div className="mt-8">
-                                <h3 className="text-3xl font-bold text-white">
-                                    Get your results.
-                                </h3>
-
-                                <p className="mt-3 max-w-xl text-lg leading-8 text-gray-400">
-                                    Monitor outcomes in real time through powerful dashboards
-                                    with detailed reports and insights.
-                                </p>
-                            </div>
-
-                        </div>
-
-                        {/* Step Number */}
-
-                        <div className="hidden lg:flex">
-                            <span className="font-mono text-4xl text-gray-600">
-                                3
-                            </span>
-                        </div>
-
                     </div>
 
                 </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, Calendar } from "lucide-react";
+import { ChevronRight, Calendar } from "lucide-react";
 
 const WORDS = [
     "game testing",
@@ -32,12 +32,12 @@ export default function Hero() {
     }, [text, isDeleting, wordIndex]);
 
     return (
-        <section className="pt-13 pb-20 md:pt-25">
+        <section className="pt-13 pb-20 md:pt-23">
             <div className="max-w-8xl mx-auto px-5">
 
                 <div className="text-center flex flex-col items-center w-full overflow-hidden">
 
-                    <h1 className="font-[700] tracking-[-0em] text-white text-[20px] sm:text-[24px] md:text-[28px] lg:text-[65px] leading-[1.3">
+                    <h1 className="font-[700] tracking-[-0em] text-white text-[20px] sm:text-[24px] md:text-[28px] lg:text-[65px] leading-[1.5]">
                         <span className="whitespace-nowrap flex justify-center">
                             <span>Solve your&nbsp;</span>
 
@@ -52,13 +52,14 @@ export default function Hero() {
                         <span className="block -mt-2 lg:-mt-4">
                             with{" "}
                             <span className="relative inline-block z-10">
-                                AI agents.
-                                <span className="absolute left-0 bottom-[-8px] -z-10 h-3 md:h-4 w-[102%] bg-[#e55cd8]/50" />
+                                AI agents
+                                <span className="absolute left-0 bottom-[2px] -z-10 h-3 md:h-4 w-[102%] bg-[#e55cd8]/50" />
                             </span>
+                            .
                         </span>
                     </h1>
 
-                    <p className="mx-auto mt-10 max-w-6xl text-[18px] sm:text-[20px] md:text-[24px] leading-[1.5] text-gray-400 font-medium px-4">
+                    <p className="mx-auto mt-7 max-w-6xl text-[18px] sm:text-[20px] md:text-[24px] leading-[1.5] text-gray-400 font-medium px-4">
                         Save countless hours of manual work by using AI agents performing end-to-end tasks at <br /> scale.
                     </p>
 
@@ -66,7 +67,7 @@ export default function Hero() {
 
                 {/* Buttons */}
 
-                <div className="mt-14 flex flex-col items-center justify-center gap-6 sm:flex-row">
+                <div className="mt-7 flex flex-col items-center justify-center gap-6 sm:flex-row">
 
                     <a
                         href="/nexus/signup"
@@ -79,15 +80,15 @@ export default function Hero() {
             from-[#b366ff]
             to-[#f056d6]
             px-8
-            py-4
+            py-3.5
             text-lg
-            font-bold
+            font-semibold
             text-white
             transition
             hover:opacity-90"
                     >
                         get started
-                        <ArrowRight size={20} />
+                        <ChevronRight size={30} />
                     </a>
 
                     <button
@@ -96,12 +97,12 @@ export default function Hero() {
             items-center
             gap-3
             rounded-full
-            border
-            border-white/20
+            border 
+            border-white/100
             px-8
-            py-4
+            py-3.5
             text-lg
-            font-bold
+            font-semibold
             text-white
             transition
             hover:bg-white/5"

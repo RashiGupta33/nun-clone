@@ -2,8 +2,22 @@ import { ChevronDown, ChevronRight } from "lucide-react";
 
 export default function Navbar() {
     return (
-        <header className="fixed top-0 left-0 w-full z-50 bg-transparent">
-            <div className="max-w-[1400px] mx-auto px-8 lg:px-32">
+        <header
+            className="
+    fixed
+    top-0
+    left-0
+    w-full
+    z-50
+    bg-[#0A0A1C]/60
+    backdrop-blur-xl
+    border-b
+    border-white/5
+    transition-all
+    duration-300
+  "
+        >
+            <div className="max-w-[1440px] mx-auto px-6 lg:px-37">
                 <div className="h-20 flex items-center justify-between">
                     {/* Logo */}
 
@@ -114,7 +128,7 @@ export default function Navbar() {
                             href="/"
                             className="flex items-center gap-1 rounded-full
               bg-[#e55cd8]
-              px-5
+              px-6
               py-2
               text-sm
               font-semibold

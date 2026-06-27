@@ -8,7 +8,10 @@ import AnalyticsAnimation from "./AnalyticsAnimation";
 
 export default function EverythingInOnePlace() {
     return (
-        <section className="relative bg-[#16122F] py-32">
+        <section className="relative bg-inherit py-32">
+
+            {/* Dark Section Background */}
+            <div className="absolute bottom-0 left-0 w-full h-32 bg-[#16122F] -z-10"></div>
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* Heading */}

@@ -2,8 +2,9 @@ import showcase from "../assets/showcase.jpg";
 
 export default function DashboardPreview() {
     return (
-        <section className="relative -mt-4">
-            <div className="max-w-7xl mx-auto px-6">
+        <section className="relative mt-0">
+            <div className="max-w-6xl mx-auto px-6 -mt-8">
+                {/* Outer Container */}
                 <div
                     className="
             overflow-hidden
@@ -14,17 +15,30 @@ export default function DashboardPreview() {
             shadow-[0_0_80px_rgba(181,90,255,0.15)]
           "
                 >
-                    <img
-                        src={showcase}
-                        alt="nunu.ai showcase"
-                        className="w-full h-auto block"
-                    />
+                    {/* Inner Glass Wrapper */}
+                    <div
+                        className="
+              relative
+              p-2
+              rounded-2xl
+              border
+              border-[rgba(229,92,216,0.3)]
+              bg-[rgba(229,92,216,0.3)]
+              backdrop-blur-md
+              z-[11]
+            "
+                    >
+                        <img
+                            src={showcase}
+                            alt="nunu.ai showcase"
+                            className="block w-full h-auto rounded-xl"
+                        />
+                    </div>
                 </div>
             </div>
 
             {/* Bottom Divider */}
-
-            <div className="relative -mt-2">
+            {/* <div className="relative -mt-2">
                 <svg
                     viewBox="0 0 1200 120"
                     preserveAspectRatio="none"
@@ -35,11 +49,11 @@ export default function DashboardPreview() {
                         fill="#16122F"
                     />
                 </svg>
-            </div>
+            </div> */}
 
             {/* Dark Section Background */}
-
-            <div className="absolute bottom-0 left-0 w-full h-32 bg-[#16122F] -z-10"></div>
+            {/* <div className="absolute bottom-0 left-0 w-full h-32 bg-[#16122F] -z-10"></div> */}
         </section>
     );
 }
+
