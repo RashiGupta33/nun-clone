@@ -130,7 +130,7 @@ export default function HowItWorks() {
 
                 {/* Step 2 */}
 
-                <div className="-ml-40 mt-28 grid lg:grid-cols-[auto_1fr] gap-12 items-center">
+                <div className="lg:-ml-40 mt-28 grid lg:grid-cols-[auto_1fr] gap-12 items-center">
 
                     {/* Step Number */}
 
@@ -184,7 +184,7 @@ export default function HowItWorks() {
 
                 {/* ===================== STEP 3 ===================== */}
 
-                <div className="mt-28 ml-160 grid lg:grid-cols-[1fr_auto] gap-12 items-center">
+                <div className="mt-28 lg:ml-160 grid lg:grid-cols-[1fr_auto] gap-12 items-center">
 
                     {/* Left */}
 

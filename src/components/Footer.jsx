@@ -6,11 +6,11 @@ export default function Footer() {
 
                 {/* Top */}
 
-                <div className="grid grid-cols-[420px_130px_200px_130px_170px_170px]">
+                <div className="grid grid-cols-2 lg:grid-cols-[420px_130px_200px_130px_170px_170px] gap-8 lg:gap-0">
 
                     {/* Logo */}
 
-                    <div>
+                    <div className="col-span-2 lg:col-span-1">
                         <a href="/">
                             <img
                                 src="/logo.svg"
@@ -71,7 +71,7 @@ export default function Footer() {
 
                 {/* Bottom */}
 
-                <div className="flex items-center justify-between pt-6">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6">
 
                     <p className="text-white/90 text-[13px] font-medium">
                         © 2026 Generai, Inc.

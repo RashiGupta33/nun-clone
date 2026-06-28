@@ -32,7 +32,7 @@ export default function Hero() {
     }, [text, isDeleting, wordIndex]);
 
     return (
-        <section className="pt-13 pb-20 md:pt-23">
+        <section className="pt-32 pb-20 md:pt-40">
             <div className="max-w-8xl mx-auto px-5">
 
                 <div className="text-center flex flex-col items-center w-full overflow-hidden">
@@ -60,7 +60,7 @@ export default function Hero() {
                     </h1>
 
                     <p className="mx-auto mt-7 max-w-6xl text-[18px] sm:text-[20px] md:text-[24px] leading-[1.5] text-gray-400 font-medium px-4">
-                        Save countless hours of manual work by using AI agents performing end-to-end tasks at <br /> scale.
+                        Save countless hours of manual work by using AI agents performing end-to-end tasks at <br className="hidden md:block" /> scale.
                     </p>
 
                 </div>
