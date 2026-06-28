@@ -81,7 +81,7 @@ export default function HowItWorks() {
 
                     {/* Step Number */}
                     <div className="hidden lg:flex justify-end">
-                        <span className="text-3xl font-mono text-white/50 relative top-10">
+                        <span className="text-2xl font-mono text-pink-400/90 relative -top-17 -left-25">
                             1
                         </span>
                     </div>
@@ -130,15 +130,7 @@ export default function HowItWorks() {
 
                 {/* Step 2 */}
 
-                <div className="lg:-ml-40 mt-28 grid lg:grid-cols-[auto_1fr] gap-12 items-center">
-
-                    {/* Step Number */}
-
-                    <div className="hidden lg:flex justify-end">
-                        <span className="text-4xl font-mono text-gray-600">
-                            2
-                        </span>
-                    </div>
+                <div className="lg:-ml-2 mt-70 grid lg:grid-cols-[1fr_1fr] gap-12 items-center">
 
                     {/* Content */}
 
@@ -147,10 +139,13 @@ export default function HowItWorks() {
                         {/* Video Card */}
 
                         <div
-                            className="
-      overflow-hidden
-      rounded-xl
-      "
+                            className="w-xl rounded-2xl p-2"
+                            style={{
+                                backgroundColor: "rgba(229, 92, 216, 0.15)",
+                                border: "1px solid rgba(247, 158, 222, 0.15)",
+                                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.16)",
+                                filter: "saturate(100%)",
+                            }}
                         >
                             <video
                                 autoPlay
@@ -180,13 +175,29 @@ export default function HowItWorks() {
 
                     </div>
 
+                    {/* Step Number */}
+
+                    <div className="hidden lg:flex justify-start">
+                        <span className="text-2xl font-mono text-pink-400/90 relative -top-9 left-28">
+                            2
+                        </span>
+                    </div>
+
                 </div>
 
                 {/* ===================== STEP 3 ===================== */}
 
-                <div className="mt-28 lg:ml-160 grid lg:grid-cols-[1fr_auto] gap-12 items-center">
+                <div className="mt-60 grid lg:grid-cols-[1fr_1fr] gap-12 items-center">
 
-                    {/* Left */}
+                    {/* Step Number */}
+
+                    <div className="hidden lg:flex justify-end">
+                        <span className="text-2xl font-mono text-pink-400/90 relative -top-17 -left-25">
+                            3
+                        </span>
+                    </div>
+
+                    {/* Content */}
 
                     <div>
 
@@ -250,17 +261,9 @@ export default function HowItWorks() {
 
                     </div>
 
-                    {/* Step Number */}
-
-                    <div className="hidden lg:flex">
-                        <span className="font-mono text-4xl text-gray-600">
-                            3
-                        </span>
-                    </div>
-
                 </div>
 
             </div>
-        </section>
+        </section >
     );
 }

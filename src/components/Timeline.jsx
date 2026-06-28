@@ -6,7 +6,7 @@ export default function Timeline() {
 
     const [pathLength, setPathLength] = useState(0);
     const [progress, setProgress] = useState(0);
-    const [dot, setDot] = useState({ x: 190, y: 0 });
+    const [dot, setDot] = useState({ x: 439.6, y: 0 });
 
     useEffect(() => {
         const path = pathRef.current;
@@ -25,11 +25,10 @@ export default function Timeline() {
 
             const windowHeight = window.innerHeight;
 
-            // Animation starts when timeline enters screen
-            const start = windowHeight * 0.85;
-
-            // Ends before leaving viewport
-            const end = -rect.height * 0.15;
+            // Track the middle of the screen
+            const screenCenter = windowHeight / 2;
+            const start = screenCenter;
+            const end = screenCenter - rect.height;
 
             let p = (start - rect.top) / (start - end);
 
@@ -62,100 +61,37 @@ export default function Timeline() {
     return (
         <div
             ref={containerRef}
-            className="hidden lg:block absolute left-160 top-[270px] -translate-x-1/2 h-[1520px] w-[380px] pointer-events-none"
+            className="hidden lg:block absolute left-1/2 top-[270px] -translate-x-1/2 h-[2600px] w-full max-w-[1099px] pointer-events-none"
         >
-            {/* Grey Path */}
-            <svg
-                className="absolute inset-0 w-full h-full"
-                viewBox="0 0 380 1520"
-                fill="none"
-            >
+            <svg viewBox="0 0 1099 2600" style={{ position: "absolute", top: 0, height: "2600px", width: "100%", zIndex: 1, overflow: "visible" }}>
                 <path
-                    d="
-            M190 0
-            V340
-            C190 420 280 450 280 530
-            V930
-            C280 1010 190 1040 190 1120
-            V1520
-          "
-                    stroke="rgba(255,255,255,.15)"
-                    strokeWidth="2"
+                    d="M439.6,0 V480 L659.4,720 V1200 L439.6,1440 V2600"
+                    fill="none"
+                    stroke="rgba(145, 145, 153, 0.2)"
+                    strokeWidth="1"
                     strokeLinecap="round"
+                    strokeLinejoin="round"
                 />
-            </svg>
-
-            {/* Animated Pink Path */}
-            <svg
-                className="absolute inset-0 w-full h-full"
-                viewBox="0 0 380 1520"
-                fill="none"
-            >
                 <path
                     ref={pathRef}
-                    d="
-            M190 0
-            V340
-            C190 420 280 450 280 530
-            V930
-            C280 1010 190 1040 190 1120
-            V1520
-          "
+                    d="M439.6,0 V480 L659.4,720 V1200 L439.6,1440 V2600"
+                    fill="none"
                     stroke="#E55CD8"
-                    strokeWidth="3"
+                    strokeWidth="2"
                     strokeLinecap="round"
+                    strokeLinejoin="round"
                     style={{
                         strokeDashoffset: pathLength * (1 - progress),
-                        transition: "stroke-dashoffset .15s ease-out",
                     }}
                 />
-                {/* Moving Glow */}
-                <defs>
-                    <filter id="glow">
-                        <feGaussianBlur stdDeviation="8" result="coloredBlur" />
-                        <feMerge>
-                            <feMergeNode in="coloredBlur" />
-                            <feMergeNode in="SourceGraphic" />
-                        </feMerge>
-                    </filter>
-                </defs>
-
-                {/* Outer Glow */}
                 <circle
-                    cx={dot.x}
-                    cy={dot.y}
-                    r="18"
-                    fill="#E55CD8"
-                    opacity="0.15"
-                    filter="url(#glow)"
-                />
-
-                {/* Middle Glow */}
-                <circle
-                    cx={dot.x}
-                    cy={dot.y}
-                    r="10"
-                    fill="#E55CD8"
-                    opacity="0.35"
-                />
-
-                {/* Main Dot */}
-                <circle
-                    cx={dot.x}
-                    cy={dot.y}
                     r="5"
-                    fill="#fff"
-                    stroke="#E55CD8"
-                    strokeWidth="3"
+                    fill="#E55CD8"
+                    style={{ filter: "drop-shadow(0 0 8px #E55CD8)" }}
+                    cx={dot.x || 439.6}
+                    cy={dot.y || 0}
                 />
             </svg>
-
-            {/* Fixed Milestone Dots */}
-            <div className="absolute left-1/2 top-0 -translate-x-1/2 h-4 w-4 rounded-full bg-pink-500 shadow-[0_0_20px_#E55CD8]" />
-
-            <div className="absolute left-[73%] top-[530px] -translate-x-1/2 h-4 w-4 rounded-full bg-pink-500 shadow-[0_0_20px_#E55CD8]" />
-
-            <div className="absolute left-1/2 bottom-0 -translate-x-1/2 h-4 w-4 rounded-full bg-pink-500 shadow-[0_0_20px_#E55CD8]" />
         </div>
     );
 }
