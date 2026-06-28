@@ -130,7 +130,7 @@ export default function HowItWorks() {
 
                 {/* Step 2 */}
 
-                <div className="lg:-ml-2 mt-70 grid lg:grid-cols-[1fr_1fr] gap-12 items-center">
+                <div className="lg:-ml-2 mt-32 lg:mt-70 grid lg:grid-cols-[1fr_1fr] gap-12 items-center">
 
                     {/* Content */}
 
@@ -139,7 +139,7 @@ export default function HowItWorks() {
                         {/* Video Card */}
 
                         <div
-                            className="w-xl rounded-2xl p-2"
+                            className="w-full max-w-xl rounded-2xl p-2"
                             style={{
                                 backgroundColor: "rgba(229, 92, 216, 0.15)",
                                 border: "1px solid rgba(247, 158, 222, 0.15)",
@@ -152,7 +152,7 @@ export default function HowItWorks() {
                                 muted
                                 loop
                                 playsInline
-                                className="w-xl block rounded-2xl"
+                                className="w-full max-w-xl block rounded-2xl"
                             >
                                 <source
                                     src="https://assets.nunu.ai/nunu-landing-gameplay-720.mp4"
@@ -187,7 +187,7 @@ export default function HowItWorks() {
 
                 {/* ===================== STEP 3 ===================== */}
 
-                <div className="mt-60 grid lg:grid-cols-[1fr_1fr] gap-12 items-center">
+                <div className="mt-32 lg:mt-60 grid lg:grid-cols-[1fr_1fr] gap-12 items-center">
 
                     {/* Step Number */}
 

@@ -77,7 +77,7 @@ export default function Timeline() {
                     d="M439.6,0 V480 L659.4,720 V1200 L439.6,1440 V2600"
                     fill="none"
                     stroke="#E55CD8"
-                    strokeWidth="2"
+                    strokeWidth="1"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     style={{
