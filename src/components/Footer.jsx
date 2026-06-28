@@ -1,97 +1,86 @@
 export default function Footer() {
     return (
-        <footer className="bg-[#0F0C1F] border-t border-white/10">
+        <footer className="bg-[#251B49] border-t border-white/10 text-[13px]">
 
-            <div className="max-w-7xl mx-auto px-6 py-16">
+            <div className="max-w-[1240px] mx-auto px-10 pt-10 pb-6">
 
                 {/* Top */}
 
-                <div className="grid lg:grid-cols-[220px_1fr] gap-16">
+                <div className="grid grid-cols-[420px_130px_200px_130px_170px_170px]">
 
                     {/* Logo */}
 
                     <div>
                         <a href="/">
-                            {/* Reuse the same SVG from Navbar here */}
                             <img
                                 src="/logo.svg"
                                 alt="nunu"
-                                className="h-10"
+                                className="h-8 w-auto"
                             />
                         </a>
                     </div>
 
-                    {/* Links */}
+                    <FooterColumn
+                        title="resources"
+                        links={[
+                            "home",
+                            "pricing",
+                            "enterprise",
+                        ]}
+                    />
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
+                    <FooterColumn
+                        title="case studies"
+                        links={[
+                            "stormforge",
+                            "hogwarts legacy",
+                            "pokemon emerald",
+                        ]}
+                    />
 
-                        <FooterColumn
-                            title="Resources"
-                            links={[
-                                "Home",
-                                "Pricing",
-                                "Enterprise",
-                            ]}
-                        />
+                    <FooterColumn
+                        title="company"
+                        links={[
+                            "blog",
+                            "about",
+                            "careers",
+                        ]}
+                    />
 
-                        <FooterColumn
-                            title="Case Studies"
-                            links={[
-                                "Stormforge",
-                                "Hogwarts Legacy",
-                                "Pokemon Emerald",
-                            ]}
-                        />
+                    <FooterColumn
+                        title="legal"
+                        links={[
+                            "privacy policy",
+                            "terms of service",
+                            "cookie policy",
+                        ]}
+                    />
 
-                        <FooterColumn
-                            title="Company"
-                            links={[
-                                "Blog",
-                                "About",
-                                "Careers",
-                            ]}
-                        />
-
-                        <FooterColumn
-                            title="Legal"
-                            links={[
-                                "Privacy Policy",
-                                "Terms of Service",
-                                "Cookie Policy",
-                            ]}
-                        />
-
-                        <FooterColumn
-                            title="Contact"
-                            links={[
-                                "team@nunu.ai",
-                            ]}
-                        />
-
-                    </div>
+                    <FooterColumn
+                        title="contact"
+                        links={[
+                            "team@nunu.ai",
+                        ]}
+                    />
 
                 </div>
 
                 {/* Divider */}
 
-                <div className="-my-5 border-t border-white/10" />
+                <div className="mt-10 border-t border-white/10"></div>
 
                 {/* Bottom */}
 
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="flex items-center justify-between pt-6">
 
-                    <p className="text-sm text-gray-500">
+                    <p className="text-white/90 text-[13px] font-medium">
                         © 2026 Generai, Inc.
                     </p>
 
-                    <div className="flex gap-4">
-
-                        <div className="flex gap-4">
-                            <SocialButton>💬</SocialButton>
-                            <SocialButton>𝕏</SocialButton>
-                            <SocialButton>in</SocialButton>
-                        </div>
-
+                    <div className="flex items-center gap-6">
+                        <SocialButton>💬</SocialButton>
+                        <SocialButton>𝕏</SocialButton>
+                        <SocialButton>in</SocialButton>
                     </div>
 
                 </div>
@@ -105,25 +94,21 @@ export default function Footer() {
 function FooterColumn({ title, links }) {
     return (
         <div>
-
-            <h4 className="text-white font-semibold mb-5">
+            <h3 className="text-[#8E88A8] text-[15px] font-medium mb-4">
                 {title}
-            </h4>
+            </h3>
 
             <div className="space-y-3">
-
                 {links.map((link) => (
                     <a
                         key={link}
                         href="#"
-                        className="block text-gray-400 hover:text-white transition"
+                        className="block text-white hover:text-[#C8B8FF] transition-colors"
                     >
                         {link}
                     </a>
                 ))}
-
             </div>
-
         </div>
     );
 }
@@ -132,20 +117,15 @@ function SocialButton({ children }) {
     return (
         <button
             className="
-      h-11
-      w-11
-      rounded-full
-      border
-      border-white/10
-      bg-white/5
-      flex
-      items-center
-      justify-center
-      text-gray-400
-      hover:text-white
-      hover:border-pink-500/40
-      transition
-      "
+                w-4
+                h-4
+                flex
+                items-center
+                justify-center
+                text-white/90
+                hover:text-white
+                transition-colors
+            "
         >
             {children}
         </button>
